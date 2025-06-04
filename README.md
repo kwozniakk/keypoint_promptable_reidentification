@@ -327,6 +327,21 @@ For instance, for the Occluded-Duke dataset with the SOLIDER pretrained weights:
 
 Make sure to [download and install the human parsing labels](https://github.com/VlSomers/person-reid/tree/dev-vlad?tab=readme-ov-file#download-annotations-for-existing-datasets) for your training dataset before running this command.
 
+### Video Re-identification example
+You can run KPR on a custom video by providing a directory containing five reference images:
+
+```bash
+python video_reid_demo.py --video my_video.mp4 --ref_dir ref_images --output annotated.mp4
+```
+
+### Custom training
+To fine-tune KPR on your own dataset you can use `train_kpr.py` which wraps the official training utilities:
+
+```bash
+python train_kpr.py --config configs/kpr/solider/kpr_occ_duke_train.yaml \
+    --root /path/to/dataset --save_dir log/custom_run
+```
+
 > [!NOTE]
 > This codebase has undergone a big refactoring for the public release. If you cannot replicate some of the reported performance, there is very likely an issue with the training configs, so please open a GitHub issue.
 
