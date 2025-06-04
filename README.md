@@ -328,10 +328,11 @@ For instance, for the Occluded-Duke dataset with the SOLIDER pretrained weights:
 Make sure to [download and install the human parsing labels](https://github.com/VlSomers/person-reid/tree/dev-vlad?tab=readme-ov-file#download-annotations-for-existing-datasets) for your training dataset before running this command.
 
 ### Video Re-identification example
-You can run KPR on a custom video by providing a directory containing five reference images:
+You can run KPR on a custom video using the SOTA configuration and automatic
+keypoint annotation. Provide a directory containing five reference images:
 
 ```bash
-python video_reid_demo.py --video my_video.mp4 --ref_dir ref_images --output annotated.mp4
+python video_reid_sota.py --video my_video.mp4 --ref_dir ref_images --output annotated.mp4
 ```
 
 ### Custom training
